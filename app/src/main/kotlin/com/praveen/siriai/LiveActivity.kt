@@ -28,7 +28,11 @@ import java.io.IOException
 class LiveActivity : Activity() {
 
     // API Keys 
+<<<<<<< HEAD
     private val GROQ_API_KEY = "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"
+=======
+    private val GROQ_API_KEY = "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"
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
     private val ELEVENLABS_API_KEY = "sk_b2f89bc987bc1cc6e82fe4d08ccfa2d3b3a77b64efaa90e2"
     
     // Bella Voice ID (Young Female - Telugu friendly)
@@ -238,7 +242,11 @@ class LiveActivity : Activity() {
         }
 
         val jsonBody = JSONObject().apply {
+<<<<<<< HEAD
             put("model", "openai/gpt-oss-20b")
+=======
+            put("model", "llama-3.1-8b-instant")
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
             put("messages", messagesArray)
         }
 
@@ -441,4 +449,8 @@ class LiveActivity : Activity() {
         super.onDestroy()
         stopEverything()
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c

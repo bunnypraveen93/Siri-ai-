@@ -31,7 +31,11 @@ res = ["src/release/res"]
 resources = ["src/release/resources"]
 
 [dependencies]
+<<<<<<< HEAD
 implementation = ["org.jetbrains.kotlin:kotlin-stdlib:2.2.0", "androidx.appcompat:appcompat-resources:1.7.1", "androidx.recyclerview:recyclerview:1.3.2", "com.google.android.material:material:1.14.0", { platform = "com.google.firebase:firebase-bom:34.16.0" }, "com.google.firebase:firebase-auth:24.2.0", "com.google.android.gms:play-services-auth:21.6.0", "com.squareup.okhttp3:okhttp:4.12.0", "kotlin-stdlib"]
+=======
+implementation = ["kotlin-stdlib", "androidx.appcompat:appcompat:1.6.1", "androidx.recyclerview:recyclerview:1.3.2", "com.google.android.material:material:1.11.0", { platform = "com.google.firebase:firebase-bom:32.8.1" }, "com.google.firebase:firebase-auth:24.2.0", "com.google.android.gms:play-services-auth:21.2.0", "com.google.firebase:firebase-crashlytics:18.6.4", { platform = "com.google.firebase:firebase-bom:34.16.0" }, "com.squareup.okhttp3:okhttp:4.12.0", "com.google.android.material:material:1.14.0", "com.google.android.gms:play-services-auth:21.6.0"]
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
 
 [android]
 namespace = "com.praveen.siriai"

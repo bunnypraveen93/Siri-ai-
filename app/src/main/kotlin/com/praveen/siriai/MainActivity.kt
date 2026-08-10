@@ -1,11 +1,18 @@
 package com.praveen.siriai
 
 import android.Manifest
+<<<<<<< HEAD
+=======
+import android.app.Activity
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.AudioManager
+<<<<<<< HEAD
 import android.os.Build
+=======
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -21,11 +28,15 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
+<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity
+=======
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+<<<<<<< HEAD
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -36,6 +47,8 @@ import com.google.firebase.FirebaseOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
+=======
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
@@ -45,6 +58,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import org.json.JSONArray
 import org.json.JSONObject
+<<<<<<< HEAD
 import java.io.File
 import java.io.IOException
 import java.io.PrintWriter
@@ -53,6 +67,12 @@ import java.security.MessageDigest
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
+=======
+import java.io.IOException
+import java.util.Locale
+
+class MainActivity : Activity() {
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var menuBtn: ImageView
     private lateinit var chatContainer: LinearLayout
@@ -62,6 +82,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var voiceBtn: ImageView
     private lateinit var welcomeLayout: LinearLayout
     
+<<<<<<< HEAD
     private lateinit var settingsLayout: LinearLayout
     private lateinit var settingsBackBtn: ImageView
 
@@ -69,6 +90,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var loginBackBtn: ImageView
     private lateinit var googleLoginBtn: LinearLayout
     
+=======
+    // Side Menu items
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
     private lateinit var menuNewChat: TextView
     private lateinit var menuProjects: TextView
     private lateinit var menuHistory: TextView
@@ -76,12 +100,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var menuLogin: TextView
     
     private val client = OkHttpClient()
+<<<<<<< HEAD
     private val apiKey = "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" 
+=======
+    private val apiKey = "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" 
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
     private val handler = Handler(Looper.getMainLooper())
     
     private lateinit var speechRecognizer: SpeechRecognizer
     private val REQUEST_CODE_PERMISSION = 200
 
+<<<<<<< HEAD
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     private val RC_SIGN_IN = 9001
@@ -268,10 +297,99 @@ class MainActivity : AppCompatActivity() {
                 val outFile = File(getExternalFilesDir(null), "actual_sha1.txt")
                 outFile.writeText("ERROR: ${e.message}")
             } catch (ignored: Exception) {
+=======
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        window.setBackgroundDrawableResource(android.R.color.black)
+        setContentView(R.layout.activity_main)
+        
+        drawerLayout = findViewById(R.id.drawerLayout)
+        menuBtn = findViewById(R.id.menuBtn)
+        chatContainer = findViewById(R.id.chatContainer)
+        chatScrollView = findViewById(R.id.chatScrollView)
+        messageInput = findViewById(R.id.messageInput)
+        sendBtn = findViewById(R.id.sendBtn)
+        voiceBtn = findViewById(R.id.voiceBtn)
+        welcomeLayout = findViewById(R.id.welcomeLayout)
+        
+        // Side Menu bindings
+        menuNewChat = findViewById(R.id.menuNewChat)
+        menuProjects = findViewById(R.id.menuProjects)
+        menuHistory = findViewById(R.id.menuHistory)
+        menuSettings = findViewById(R.id.menuSettings)
+        menuLogin = findViewById(R.id.menuLogin)
+
+        // 3-Lines Icon Click -> Opens Side Menu
+        menuBtn.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+
+        // Side Menu Click Listeners
+        menuNewChat.setOnClickListener {
+            chatContainer.removeAllViews()
+            welcomeLayout.visibility = View.VISIBLE
+            drawerLayout.closeDrawer(GravityCompat.START)
+            Toast.makeText(this, "New Chat Started", Toast.LENGTH_SHORT).show()
+        }
+
+        menuProjects.setOnClickListener {
+            drawerLayout.closeDrawer(GravityCompat.START)
+            Toast.makeText(this, "Projects Clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        menuHistory.setOnClickListener {
+            drawerLayout.closeDrawer(GravityCompat.START)
+            Toast.makeText(this, "Recent History Clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        menuSettings.setOnClickListener {
+            drawerLayout.closeDrawer(GravityCompat.START)
+            Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        menuLogin.setOnClickListener {
+            drawerLayout.closeDrawer(GravityCompat.START)
+            Toast.makeText(this, "Login Clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        // Request Audio Permission
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), REQUEST_CODE_PERMISSION)
+        }
+        
+        setupDynamicSendButton()
+        setupSpeechRecognizer()
+
+        // Handle Send and Live Mode button click
+        sendBtn.setOnClickListener {
+            if (sendBtn.tag == "send") {
+                val userText = messageInput.text.toString().trim()
+                if (userText.isNotEmpty()) {
+                    welcomeLayout.visibility = View.GONE
+                    addMessage(userText, true)
+                    messageInput.text.clear()
+                    addMessage("Thinking...", false)
+                    callGroqAPI(userText)
+                }
+            } else {
+                // Open Live Mode Window when tag is "live"
+                val intent = Intent(this@MainActivity, LiveActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        
+        // Standard Mic Button Click
+        voiceBtn.setOnClickListener {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+                startListeningWithoutBeep()
+            } else {
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), REQUEST_CODE_PERMISSION)
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
             }
         }
     }
 
+<<<<<<< HEAD
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -332,6 +450,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+=======
+    // Toggle between Live Wave icon and Send icon dynamically
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
     private fun setupDynamicSendButton() {
         sendBtn.tag = "live"
         sendBtn.setImageResource(R.drawable.ic_gemini_live)
@@ -385,6 +506,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startListeningWithoutBeep() {
+<<<<<<< HEAD
         try {
             val speechRecognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
                 putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
@@ -405,15 +527,33 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+=======
+        val speechRecognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+            putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+        }
+        muteBeepSound(true)
+        speechRecognizer.startListening(speechRecognizerIntent)
+    }
+
+    private fun muteBeepSound(mute: Boolean) {
+        val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        val adjust = if (mute) AudioManager.ADJUST_MUTE else AudioManager.ADJUST_UNMUTE
+        audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, adjust, 0)
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
     }
 
     override fun onDestroy() {
         super.onDestroy()
+<<<<<<< HEAD
         try {
             speechRecognizer.destroy()
         } catch (e: Exception) {
             e.printStackTrace()
         }
+=======
+        speechRecognizer.destroy()
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
     }
 
     private fun addMessage(text: String, isUser: Boolean) {
@@ -464,7 +604,11 @@ class MainActivity : AppCompatActivity() {
         messagesArray.put(messageObj)
         
         val jsonBody = JSONObject()
+<<<<<<< HEAD
         jsonBody.put("model", "openai/gpt-oss-20b") 
+=======
+        jsonBody.put("model", "llama-3.1-8b-instant") 
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
         jsonBody.put("messages", messagesArray)
         
         val body = jsonBody.toString().toRequestBody("application/json".toMediaType())
@@ -510,4 +654,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c

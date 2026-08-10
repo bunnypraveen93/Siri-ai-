@@ -7,7 +7,10 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
+<<<<<<< HEAD
         android:name=".MyApp"
+=======
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Siri AI"
@@ -26,6 +29,7 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <!-- Live Mode Activity (Found in your project structure) -->
         <activity 
             android:name=".LiveActivity" 
@@ -33,3 +37,17 @@
 
     </application>
 </manifest>
+=======
+        <!-- Live Mode Activity -->
+        <activity 
+            android:name=".LiveActivity" 
+            android:exported="false" />
+            
+        <!-- Login Activity (If you are still using Firebase Auth) -->
+        <activity 
+            android:name=".LoginActivity" 
+            android:exported="false" />
+
+    </application>
+</manifest>
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
