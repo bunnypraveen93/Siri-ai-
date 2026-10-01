@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nakshatra AI</string>
+
+    <string name="accessibility_service_description">Nakshatra AI utilizes the Accessibility Service to automate pressing the Send button in WhatsApp after you confirm your message.</string>
+
+    <string name="siri_ai_privacy_policy">
+<b>About Nakshatra AI:</b>\n
+Nakshatra AI is your smart personal assistant designed to help with voice commands, web searches, and daily tasks quickly and efficiently.\n\n
+<b>Zero Data Collection:</b>\n
+Your privacy is our absolute priority. Nakshatra AI does not collect, store, sell, or share any of your personal data.\n\n
+<b>Chat &amp; Voice Privacy:</b>\n
+We do not monitor your conversations. Your chat history and voice inputs are processed securely and are never harvested or stored on external servers.\n\n
+<b>Device Permissions:</b>\n
+Microphone and Contacts permissions are strictly used locally on your device to provide core functionality. We do not extract or upload this information.
+    </string>
+</resources>

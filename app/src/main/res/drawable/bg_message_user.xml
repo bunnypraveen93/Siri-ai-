@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Blue బదులుగా ప్రొఫెషనల్ డార్క్ గ్రే కలర్ వాడాము -->
+    <solid android:color="#2F2F2F"/> 
+    <corners android:radius="20dp"/>
+</shape>

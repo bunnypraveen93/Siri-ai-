@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "1092066177158",
+    "project_id": "siri-ai-455a6",
+    "storage_bucket": "siri-ai-455a6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092066177158:android:977705bc14288f720ba107",
+        "android_client_info": {
+          "package_name": "com.praveen.siriai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092066177158-l251dvgjdqdtajo327dma8kd1b5sptev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.praveen.siriai",
+            "certificate_hash": "03c165e49e1080459fa8257ff256d32d84525a62"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGZpX1zjXkVaho_MU7gErF8Jsd3CHto00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

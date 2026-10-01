@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/app_bg">
+
+    <!-- MAIN DRAWER & CHAT SCREEN -->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg">
+
+        <!-- Main Content Wrapper -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Static Background Image -->
+            <ImageView
+                android:id="@+id/mainBackgroundImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/nakshatra_bg"
+                android:scaleType="centerCrop" />
+
+            <!-- Main Chat Area -->
+            <RelativeLayout
+                android:id="@+id/chatRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Chat WebView -->
+                <WebView
+                    android:id="@+id/chatWebView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginBottom="90dp"
+                    android:background="@android:color/transparent" />
+
+                <!-- 2. HOME SCREEN WELCOME UI -->
+                <RelativeLayout
+                    android:id="@+id/welcomeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="56dp"
+                    android:paddingHorizontal="24dp">
+
+                    <!-- STATIC TOP PART: Logo and App Name (Position strictly locked) -->
+                    <LinearLayout
+                        android:id="@+id/welcomeTopLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="90dp" 
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/nakshatra_logo" />
+
+                        <!-- NAKSHATRA AI with dual colors -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:letterSpacing="0.05"
+                                android:text="NAKSHATRA "
+                                android:textColor="#FFFFFF"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:letterSpacing="0.05"
+                                android:text="AI"
+                                android:textColor="#D885FF"
+                                android:textSize="24sp"
+                                android:textStyle="bold|italic" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- DYNAMIC BOTTOM PART: Greeting & Cards -->
+                    <!-- Anchored below the Top Layout so it will NOT jump when keyboard opens -->
+                    <LinearLayout
+                        android:id="@+id/welcomeBottomLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/welcomeTopLayout"
+                        android:layout_marginTop="80dp"
+                        android:orientation="vertical">
+
+                        <!-- Left Aligned Greeting replaces the first card's place -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="16dp">
+                            
+                            <TextView
+                                android:id="@+id/welcomeTextName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Hello,"
+                                android:textColor="#FFFFFF"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/welcomeTextSubtitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="How can I help you today?"
+                                android:textColor="#D0D0D0"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                        <!-- Suggestion Chips -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Chip 2: Write -->
+                            <LinearLayout
+                                android:id="@+id/chipWrite"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/bg_message_user"
+                                android:backgroundTint="#1AFFFFFF"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="14dp">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@android:drawable/ic_menu_edit"
+                                    android:tint="#A0B0FF" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="14dp"
+                                    android:text="Write something..."
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <!-- Chip 3: Solve -->
+                            <LinearLayout
+                                android:id="@+id/chipSolve"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/bg_message_user"
+                                android:backgroundTint="#1AFFFFFF"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="14dp">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@android:drawable/ic_menu_manage"
+                                    android:tint="#A0B0FF" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="14dp"
+                                    android:text="Solve a problem..."
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <!-- Chip 4: Ideas -->
+                            <LinearLayout
+                                android:id="@+id/chipIdeas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/bg_message_user"
+                                android:backgroundTint="#1AFFFFFF"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="14dp">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@android:drawable/ic_menu_help"
+                                    android:tint="#A0B0FF" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="14dp"
+                                    android:text="Give me ideas..."
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- Top Header Bar + Smooth Top Fade -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/topBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@android:color/transparent"
+                        android:paddingHorizontal="16dp">
+
+                        <ImageView
+                            android:id="@+id/menuBtn"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="6dp"
+                            android:src="@android:drawable/ic_menu_sort_by_size"
+                            android:tint="@color/icon_tint" />
+
+                        <TextView
+                            android:id="@+id/topTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Nakshatra AI"
+                            android:textColor="@color/text_primary"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/topFadeView"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:background="@drawable/gradient_chat_top" />
+                </LinearLayout>
+
+                <!-- Bottom Floating Input Layout -->
+                <LinearLayout
+                    android:id="@+id/bottomInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/gradient_chat_bottom"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="36dp"
+                    android:paddingBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_message_user"
+                        android:backgroundTint="@color/card_bg"
+                        android:gravity="bottom"
+                        android:orientation="horizontal"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="8dp"
+                        android:paddingVertical="5dp">
+
+                        <EditText
+                            android:id="@+id/messageInput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:hint="Ask Nakshatra AI..."
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:maxLines="6"
+                            android:minHeight="46dp"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="10dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/voiceBtn"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="8dp"
+                            android:src="@android:drawable/ic_btn_speak_now"
+                            android:tint="@color/icon_tint" />
+
+                        <ImageView
+                            android:id="@+id/sendBtn"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_gemini_live" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <!-- Navigation Drawer (Side Slide Menu) -->
+        <LinearLayout
+            android:layout_width="290dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/card_bg"
+            android:orientation="vertical"
+            android:paddingTop="32dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:paddingHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/menuTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="Nakshatra AI"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/menuSearchBtn"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="6dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:tint="@color/icon_tint" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/menuNewChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="12dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_new_chat_outline"
+                    android:tint="@color/icon_tint" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="New chat"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingHorizontal="20dp"
+                android:text="Recent"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/historyListContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp"
+                    android:paddingTop="6dp" />
+            </ScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:id="@+id/menuSettingsLoggedOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="14dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="14dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="12dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ivProfileAvatar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@android:drawable/ic_menu_myplaces"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/tvProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="User Name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <!-- 1. AUTHENTICATED USER SETTINGS OVERLAY -->
+    <LinearLayout
+        android:id="@+id/settingsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp" android:paddingHorizontal="16dp">
+            <ImageView android:id="@+id/settingsBackBtn" android:layout_width="48dp" android:layout_height="48dp" android:layout_alignParentStart="true" android:layout_centerVertical="true" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="?android:attr/homeAsUpIndicator" android:tint="@color/icon_tint" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:text="Settings" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold" />
+        </RelativeLayout>
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingHorizontal="20dp" android:paddingBottom="24dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" android:paddingVertical="20dp">
+                    <ImageView android:id="@+id/settingsProfileAvatar" android:layout_width="72dp" android:layout_height="72dp" android:background="@android:drawable/ic_menu_myplaces" android:scaleType="centerCrop" />
+                    <TextView android:id="@+id/settingsProfileName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="User Name" android:textColor="@color/text_primary" android:textSize="18sp" android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_message_user" android:backgroundTint="@color/card_bg" android:orientation="vertical">
+                    
+                    <TextView android:id="@+id/settingsAppLanguage" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:paddingHorizontal="18dp" android:paddingVertical="14dp" android:text="App language" android:textColor="@color/text_primary" android:textSize="16sp" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginHorizontal="18dp" android:background="@color/divider_color" />
+                    <TextView android:id="@+id/settingsTermsPrivacy" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:paddingHorizontal="18dp" android:paddingVertical="14dp" android:text="Terms &amp; Privacy" android:textColor="@color/text_primary" android:textSize="16sp" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginHorizontal="18dp" android:background="@color/divider_color" />
+                    <TextView android:id="@+id/settingsFeedbackSupport" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:paddingHorizontal="18dp" android:paddingVertical="14dp" android:text="Feedback &amp; Support" android:textColor="@color/text_primary" android:textSize="16sp" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginHorizontal="18dp" android:background="@color/divider_color" />
+                    <TextView android:id="@+id/settingsAbout" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:paddingHorizontal="18dp" android:paddingVertical="14dp" android:text="About Nakshatra AI" android:textColor="@color/text_primary" android:textSize="16sp" />
+                </LinearLayout>
+                <TextView android:id="@+id/menuLogout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:background="@drawable/bg_message_user" android:backgroundTint="@color/card_bg" android:gravity="center" android:paddingVertical="14dp" android:text="Logout" android:textColor="@android:color/holo_red_light" android:textSize="16sp" android:textStyle="bold" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- 2. GUEST SETTINGS OVERLAY -->
+    <LinearLayout android:id="@+id/guestSettingsLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/app_bg" android:clickable="true" android:focusable="true" android:orientation="vertical" android:visibility="gone">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp" android:paddingHorizontal="16dp">
+            <ImageView android:id="@+id/guestSettingsBackBtn" android:layout_width="48dp" android:layout_height="48dp" android:layout_alignParentStart="true" android:layout_centerVertical="true" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="?android:attr/homeAsUpIndicator" android:tint="@color/icon_tint" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:text="Settings" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold" />
+        </RelativeLayout>
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingHorizontal="20dp" android:paddingTop="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_message_user" android:backgroundTint="@color/card_bg" android:orientation="vertical">
+                    
+                    <TextView android:id="@+id/guestSettingsAppLanguage" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:paddingHorizontal="18dp" android:paddingVertical="14dp" android:text="App language" android:textColor="@color/text_primary" android:textSize="16sp" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginHorizontal="18dp" android:background="@color/divider_color" />
+                    <TextView android:id="@+id/guestSettingsTermsPrivacy" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:paddingHorizontal="18dp" android:paddingVertical="14dp" android:text="Terms &amp; Privacy" android:textColor="@color/text_primary" android:textSize="16sp" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginHorizontal="18dp" android:background="@color/divider_color" />
+                    <TextView android:id="@+id/guestSettingsAbout" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="?attr/selectableItemBackground" android:paddingHorizontal="18dp" android:paddingVertical="14dp" android:text="About Nakshatra AI" android:textColor="@color/text_primary" android:textSize="16sp" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/guestSettingsLoginBtn" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:background="@drawable/bg_message_user" android:backgroundTint="@color/card_bg" android:clickable="true" android:focusable="true" android:gravity="center" android:paddingVertical="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sign in to save your history" android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- 3. LOGIN OVERLAY -->
+    <LinearLayout android:id="@+id/loginLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/app_bg" android:clickable="true" android:focusable="true" android:orientation="vertical" android:visibility="gone">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp" android:paddingHorizontal="16dp">
+            <ImageView android:id="@+id/loginBackBtn" android:layout_width="48dp" android:layout_height="48dp" android:layout_alignParentStart="true" android:layout_centerVertical="true" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="?android:attr/homeAsUpIndicator" android:tint="@color/icon_tint" />
+        </RelativeLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical" android:padding="24dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Welcome to Nakshatra AI" android:textColor="@color/text_primary" android:textSize="26sp" android:textStyle="bold" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Sign in to continue and sync chats" android:textColor="@color/text_secondary" android:textSize="15sp" />
+            <LinearLayout android:id="@+id/googleLoginBtn" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="32dp" android:background="@drawable/bg_message_user" android:backgroundTint="@color/card_bg" android:clickable="true" android:focusable="true" android:gravity="center" android:orientation="horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continue with Google" android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 4. SUB-SETTINGS: LANGUAGE -->
+    <LinearLayout android:id="@+id/languageLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/app_bg" android:clickable="true" android:focusable="true" android:orientation="vertical" android:visibility="gone">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp" android:paddingHorizontal="16dp">
+            <ImageView android:id="@+id/languageBackBtn" android:layout_width="48dp" android:layout_height="48dp" android:layout_alignParentStart="true" android:layout_centerVertical="true" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="?android:attr/homeAsUpIndicator" android:tint="@color/icon_tint" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:text="App Language" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold" />
+        </RelativeLayout>
+        <RadioGroup android:id="@+id/rgLanguage" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp">
+            <RadioButton android:id="@+id/rbLangEnglish" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="10dp" android:text="English" android:textColor="@color/text_primary" android:textSize="16sp" />
+            <RadioButton android:id="@+id/rbLangTelugu" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="10dp" android:text="తెలుగు (Telugu)" android:textColor="@color/text_primary" android:textSize="16sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- 5. SUB-SETTINGS: TERMS & PRIVACY -->
+    <LinearLayout android:id="@+id/termsPrivacyLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/app_bg" android:clickable="true" android:focusable="true" android:orientation="vertical" android:visibility="gone">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp" android:paddingHorizontal="16dp">
+            <ImageView android:id="@+id/termsPrivacyBackBtn" android:layout_width="48dp" android:layout_height="48dp" android:layout_alignParentStart="true" android:layout_centerVertical="true" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="?android:attr/homeAsUpIndicator" android:tint="@color/icon_tint" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:text="Terms &amp; Privacy" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold" />
+        </RelativeLayout>
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp">
+            <TextView android:id="@+id/tvPrivacyPolicyText" android:layout_width="match_parent" android:layout_height="wrap_content" android:lineSpacingExtra="8dp" android:text="@string/siri_ai_privacy_policy" android:textColor="@color/text_primary" android:textSize="16sp" />
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- 6. SUB-SETTINGS: FEEDBACK & SUPPORT -->
+    <LinearLayout android:id="@+id/feedbackSupportLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/app_bg" android:clickable="true" android:focusable="true" android:orientation="vertical" android:visibility="gone">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp" android:paddingHorizontal="16dp">
+            <ImageView android:id="@+id/feedbackSupportBackBtn" android:layout_width="48dp" android:layout_height="48dp" android:layout_alignParentStart="true" android:layout_centerVertical="true" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="?android:attr/homeAsUpIndicator" android:tint="@color/icon_tint" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:text="Feedback &amp; Support" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 7. SUB-SETTINGS: ABOUT -->
+    <LinearLayout android:id="@+id/aboutLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/app_bg" android:clickable="true" android:focusable="true" android:orientation="vertical" android:visibility="gone">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="56dp" android:paddingHorizontal="16dp">
+            <ImageView android:id="@+id/aboutBackBtn" android:layout_width="48dp" android:layout_height="48dp" android:layout_alignParentStart="true" android:layout_centerVertical="true" android:background="?attr/selectableItemBackgroundBorderless" android:padding="12dp" android:src="?android:attr/homeAsUpIndicator" android:tint="@color/icon_tint" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:text="About Nakshatra AI" android:textColor="@color/text_primary" android:textSize="20sp" android:textStyle="bold" />
+        </RelativeLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical" android:padding="24dp">
+            <ImageView android:layout_width="120dp" android:layout_height="120dp" android:layout_marginBottom="16dp" android:src="@mipmap/ic_launcher" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nakshatra AI" android:textColor="@color/text_primary" android:textSize="26sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvAboutVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Advanced AI Assistant" android:textColor="@color/text_secondary" android:textSize="16sp" android:textAlignment="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
