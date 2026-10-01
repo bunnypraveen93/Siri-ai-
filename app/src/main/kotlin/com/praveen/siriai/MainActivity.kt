@@ -1,7 +1,6 @@
 package com.praveen.siriai
 
 import android.Manifest
-<<<<<<< HEAD
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -19,29 +18,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
-=======
-<<<<<<< HEAD
-=======
-import android.app.Activity
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-import android.content.Context
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.media.AudioManager
-<<<<<<< HEAD
-import android.os.Build
-=======
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.text.Editable
 import android.text.TextWatcher
-<<<<<<< HEAD
 import android.util.Base64
 import android.view.MotionEvent
 import android.view.View
@@ -73,24 +54,6 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsAnimationCompat
-=======
-import android.view.View
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.ScrollView
-import android.widget.TextView
-import android.widget.Toast
-<<<<<<< HEAD
-import androidx.appcompat.app.AppCompatActivity
-=======
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
-<<<<<<< HEAD
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -101,34 +64,16 @@ import com.google.firebase.FirebaseOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
-<<<<<<< HEAD
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 
 import java.io.File
-=======
-=======
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.Response
-import org.json.JSONArray
-import org.json.JSONObject
-<<<<<<< HEAD
-import java.io.File
-import java.io.IOException
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 import java.io.PrintWriter
 import java.io.StringWriter
 import java.security.MessageDigest
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
-<<<<<<< HEAD
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var chatRootLayout: RelativeLayout
     private lateinit var mainBackgroundImage: ImageView
@@ -148,31 +93,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var settingsProfileAvatar: ImageView
     private lateinit var settingsProfileName: TextView
     private lateinit var menuLogout: TextView
-=======
-=======
-import java.io.IOException
-import java.util.Locale
-
-class MainActivity : Activity() {
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var menuBtn: ImageView
-    private lateinit var chatContainer: LinearLayout
-    private lateinit var chatScrollView: ScrollView
-    private lateinit var messageInput: EditText
-    private lateinit var sendBtn: ImageView
-    private lateinit var voiceBtn: ImageView
-    private lateinit var welcomeLayout: LinearLayout
-    
-<<<<<<< HEAD
-    private lateinit var settingsLayout: LinearLayout
-    private lateinit var settingsBackBtn: ImageView
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 
     private lateinit var loginLayout: LinearLayout
     private lateinit var loginBackBtn: ImageView
     private lateinit var googleLoginBtn: LinearLayout
-<<<<<<< HEAD
 
     private lateinit var menuSearchBtn: ImageView
     private lateinit var menuNewChat: LinearLayout
@@ -217,36 +141,11 @@ class MainActivity : Activity() {
     private lateinit var speechRecognizer: SpeechRecognizer
     private val REQUEST_CODE_PERMISSION = 200
 
-=======
-    
-=======
-    // Side Menu items
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-    private lateinit var menuNewChat: TextView
-    private lateinit var menuProjects: TextView
-    private lateinit var menuHistory: TextView
-    private lateinit var menuSettings: TextView
-    private lateinit var menuLogin: TextView
-    
-    private val client = OkHttpClient()
-<<<<<<< HEAD
-    private val apiKey = "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" 
-=======
-    private val apiKey = "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" 
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-    private val handler = Handler(Looper.getMainLooper())
-    
-    private lateinit var speechRecognizer: SpeechRecognizer
-    private val REQUEST_CODE_PERMISSION = 200
-
-<<<<<<< HEAD
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     private val RC_SIGN_IN = 9001
     private val WEB_CLIENT_ID = "1092066177158-v1f0l4rtflivigr78eksn5mmm399hg93.apps.googleusercontent.com"
 
-<<<<<<< HEAD
     private lateinit var chatRepository: ChatRepository
     private var currentChatId: String? = null
     private var currentMessageId = 0
@@ -273,26 +172,17 @@ class MainActivity : Activity() {
         var flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window.decorView.systemUiVisibility = flags
 
-=======
-    override fun onCreate(savedInstanceState: Bundle?) {
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
         Thread.setDefaultUncaughtExceptionHandler { _, throwable ->
             try {
                 val sw = StringWriter()
                 throwable.printStackTrace(PrintWriter(sw))
                 val logFile = File(getExternalFilesDir(null), "crash_log.txt")
                 logFile.writeText(sw.toString())
-<<<<<<< HEAD
             } catch (ignored: Exception) {}
-=======
-            } catch (ignored: Exception) {
-            }
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
             android.os.Process.killProcess(android.os.Process.myPid())
             System.exit(1)
         }
 
-<<<<<<< HEAD
         sharedPrefs = getSharedPreferences("SiriAppPrefs", Context.MODE_PRIVATE)
         val savedLang = sharedPrefs.getString("app_lang", "en") ?: "en"
 
@@ -319,11 +209,6 @@ class MainActivity : Activity() {
 
         Thread { writeActualSigningSha1ToFile() }.start()
         handler.post { TTSHelper.init(this) }
-=======
-        super.onCreate(savedInstanceState)
-
-        writeActualSigningSha1ToFile()
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 
         if (FirebaseApp.getApps(this).isEmpty()) {
             val options = FirebaseOptions.Builder()
@@ -336,10 +221,7 @@ class MainActivity : Activity() {
         }
 
         firebaseAuth = FirebaseAuth.getInstance()
-<<<<<<< HEAD
         chatRepository = ChatRepository(firebaseAuth, FirebaseFirestore.getInstance())
-=======
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(WEB_CLIENT_ID)
@@ -348,7 +230,6 @@ class MainActivity : Activity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         try {
-<<<<<<< HEAD
             drawerLayout = findViewById(R.id.drawerLayout)
             chatRootLayout = findViewById(R.id.chatRootLayout)
             mainBackgroundImage = findViewById(R.id.mainBackgroundImage)
@@ -423,27 +304,10 @@ class MainActivity : Activity() {
             settingsProfileAvatar = findViewById(R.id.settingsProfileAvatar)
             settingsProfileName = findViewById(R.id.settingsProfileName)
             menuLogout = findViewById(R.id.menuLogout)
-=======
-            window.setBackgroundDrawableResource(android.R.color.black)
-            setContentView(R.layout.activity_main)
-            
-            drawerLayout = findViewById(R.id.drawerLayout)
-            menuBtn = findViewById(R.id.menuBtn)
-            chatContainer = findViewById(R.id.chatContainer)
-            chatScrollView = findViewById(R.id.chatScrollView)
-            messageInput = findViewById(R.id.messageInput)
-            sendBtn = findViewById(R.id.sendBtn)
-            voiceBtn = findViewById(R.id.voiceBtn)
-            welcomeLayout = findViewById(R.id.welcomeLayout)
-            
-            settingsLayout = findViewById(R.id.settingsLayout)
-            settingsBackBtn = findViewById(R.id.settingsBackBtn)
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 
             loginLayout = findViewById(R.id.loginLayout)
             loginBackBtn = findViewById(R.id.loginBackBtn)
             googleLoginBtn = findViewById(R.id.googleLoginBtn)
-<<<<<<< HEAD
 
             menuSearchBtn = findViewById(R.id.menuSearchBtn)
             menuNewChat = findViewById(R.id.menuNewChat)
@@ -483,76 +347,10 @@ class MainActivity : Activity() {
                     val currentText = tvAboutVersion.text.toString()
                     tvAboutVersion.text = "$currentText\n\nApp Version: $versionText"
                 }
-=======
-            
-            menuNewChat = findViewById(R.id.menuNewChat)
-            menuProjects = findViewById(R.id.menuProjects)
-            menuHistory = findViewById(R.id.menuHistory)
-            menuSettings = findViewById(R.id.menuSettings)
-            menuLogin = findViewById(R.id.menuLogin)
-
-            menuBtn.setOnClickListener {
-                drawerLayout.openDrawer(GravityCompat.START)
-            }
-
-            menuNewChat.setOnClickListener {
-                chatContainer.removeAllViews()
-                welcomeLayout.visibility = View.VISIBLE
-                drawerLayout.closeDrawer(GravityCompat.START)
-            }
-
-            menuProjects.setOnClickListener {
-                drawerLayout.closeDrawer(GravityCompat.START)
-                Toast.makeText(this, "Projects Clicked", Toast.LENGTH_SHORT).show()
-            }
-
-            menuHistory.setOnClickListener {
-                drawerLayout.closeDrawer(GravityCompat.START)
-                Toast.makeText(this, "Recent History Clicked", Toast.LENGTH_SHORT).show()
-            }
-
-            menuSettings.setOnClickListener {
-                settingsLayout.alpha = 0f
-                settingsLayout.visibility = View.VISIBLE
-                settingsLayout.animate().alpha(1f).setDuration(250).start()
-            }
-
-            settingsBackBtn.setOnClickListener {
-                goBackToMenuFromSettings()
-            }
-
-            menuLogin.setOnClickListener {
-                drawerLayout.closeDrawer(GravityCompat.START)
-                loginLayout.alpha = 0f
-                loginLayout.visibility = View.VISIBLE
-                loginLayout.animate().alpha(1f).setDuration(250).start()
-            }
-
-            updateMenuLoginText()
-
-            loginBackBtn.setOnClickListener {
-                goBackToMenuFromLogin()
-            }
-
-            googleLoginBtn.setOnClickListener {
-                val signInIntent = googleSignInClient.signInIntent
-                startActivityForResult(signInIntent, RC_SIGN_IN)
-            }
-
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), REQUEST_CODE_PERMISSION)
-            }
-            
-            setupDynamicSendButton()
-            
-            try {
-                setupSpeechRecognizer()
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
             } catch (e: Exception) {
                 e.printStackTrace()
             }
 
-<<<<<<< HEAD
             rgLanguage = findViewById(R.id.rgLanguage)
             rbLangEnglish = findViewById(R.id.rbLangEnglish)
             rbLangTelugu = findViewById(R.id.rbLangTelugu)
@@ -769,25 +567,6 @@ class MainActivity : Activity() {
 
             voiceBtn.setOnClickListener {
                 if (!checkRateLimit()) return@setOnClickListener
-=======
-            sendBtn.setOnClickListener {
-                if (sendBtn.tag == "send") {
-                    val userText = messageInput.text.toString().trim()
-                    if (userText.isNotEmpty()) {
-                        welcomeLayout.visibility = View.GONE
-                        addMessage(userText, true)
-                        messageInput.text.clear()
-                        addMessage("Thinking...", false)
-                        callGroqAPI(userText)
-                    }
-                } else {
-                    val intent = Intent(this@MainActivity, LiveActivity::class.java)
-                    startActivity(intent)
-                }
-            }
-            
-            voiceBtn.setOnClickListener {
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
                     startListeningWithoutBeep()
                 } else {
@@ -795,7 +574,6 @@ class MainActivity : Activity() {
                 }
             }
 
-<<<<<<< HEAD
             voiceBtn.setOnLongClickListener {
                 toggleWakeWordService()
                 true
@@ -1241,10 +1019,6 @@ class MainActivity : Activity() {
             val lang = if (checkedId == R.id.rbLangTelugu) "te" else "en"
             sharedPrefs.edit().putString("app_lang", lang).apply()
             AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(lang))
-=======
-        } catch (e: Exception) {
-            Toast.makeText(this, "Error: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
         }
     }
 
@@ -1254,22 +1028,12 @@ class MainActivity : Activity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 val packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNING_CERTIFICATES)
                 val signatures = packageInfo.signingInfo?.apkContentsSigners
-<<<<<<< HEAD
                 signatures?.forEach { sig -> sha1List.append(sha1Of(sig.toByteArray())).append("\n") }
-=======
-                signatures?.forEach { sig ->
-                    val md = MessageDigest.getInstance("SHA-1")
-                    md.update(sig.toByteArray())
-                    val sha1 = md.digest().joinToString(":") { String.format("%02X", it) }
-                    sha1List.append(sha1).append("\n")
-                }
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
             } else {
                 @Suppress("DEPRECATION")
                 val packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
                 @Suppress("DEPRECATION")
                 val signatures = packageInfo.signatures
-<<<<<<< HEAD
                 signatures?.forEach { sig -> sha1List.append(sha1Of(sig.toByteArray())).append("\n") }
             }
             val file = File(getExternalFilesDir(null), "sha1_key.txt")
@@ -1386,115 +1150,10 @@ class MainActivity : Activity() {
                     divider.layoutParams = params
                     historyListContainer.addView(divider)
                 }
-=======
-                signatures?.forEach { sig ->
-                    val md = MessageDigest.getInstance("SHA-1")
-                    md.update(sig.toByteArray())
-                    val sha1 = md.digest().joinToString(":") { String.format("%02X", it) }
-                    sha1List.append(sha1).append("\n")
-                }
-            }
-            val outFile = File(getExternalFilesDir(null), "actual_sha1.txt")
-            outFile.writeText(sha1List.toString())
-        } catch (e: Exception) {
-            try {
-                val outFile = File(getExternalFilesDir(null), "actual_sha1.txt")
-                outFile.writeText("ERROR: ${e.message}")
-            } catch (ignored: Exception) {
-=======
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        window.setBackgroundDrawableResource(android.R.color.black)
-        setContentView(R.layout.activity_main)
-        
-        drawerLayout = findViewById(R.id.drawerLayout)
-        menuBtn = findViewById(R.id.menuBtn)
-        chatContainer = findViewById(R.id.chatContainer)
-        chatScrollView = findViewById(R.id.chatScrollView)
-        messageInput = findViewById(R.id.messageInput)
-        sendBtn = findViewById(R.id.sendBtn)
-        voiceBtn = findViewById(R.id.voiceBtn)
-        welcomeLayout = findViewById(R.id.welcomeLayout)
-        
-        // Side Menu bindings
-        menuNewChat = findViewById(R.id.menuNewChat)
-        menuProjects = findViewById(R.id.menuProjects)
-        menuHistory = findViewById(R.id.menuHistory)
-        menuSettings = findViewById(R.id.menuSettings)
-        menuLogin = findViewById(R.id.menuLogin)
-
-        // 3-Lines Icon Click -> Opens Side Menu
-        menuBtn.setOnClickListener {
-            drawerLayout.openDrawer(GravityCompat.START)
-        }
-
-        // Side Menu Click Listeners
-        menuNewChat.setOnClickListener {
-            chatContainer.removeAllViews()
-            welcomeLayout.visibility = View.VISIBLE
-            drawerLayout.closeDrawer(GravityCompat.START)
-            Toast.makeText(this, "New Chat Started", Toast.LENGTH_SHORT).show()
-        }
-
-        menuProjects.setOnClickListener {
-            drawerLayout.closeDrawer(GravityCompat.START)
-            Toast.makeText(this, "Projects Clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        menuHistory.setOnClickListener {
-            drawerLayout.closeDrawer(GravityCompat.START)
-            Toast.makeText(this, "Recent History Clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        menuSettings.setOnClickListener {
-            drawerLayout.closeDrawer(GravityCompat.START)
-            Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        menuLogin.setOnClickListener {
-            drawerLayout.closeDrawer(GravityCompat.START)
-            Toast.makeText(this, "Login Clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        // Request Audio Permission
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), REQUEST_CODE_PERMISSION)
-        }
-        
-        setupDynamicSendButton()
-        setupSpeechRecognizer()
-
-        // Handle Send and Live Mode button click
-        sendBtn.setOnClickListener {
-            if (sendBtn.tag == "send") {
-                val userText = messageInput.text.toString().trim()
-                if (userText.isNotEmpty()) {
-                    welcomeLayout.visibility = View.GONE
-                    addMessage(userText, true)
-                    messageInput.text.clear()
-                    addMessage("Thinking...", false)
-                    callGroqAPI(userText)
-                }
-            } else {
-                // Open Live Mode Window when tag is "live"
-                val intent = Intent(this@MainActivity, LiveActivity::class.java)
-                startActivity(intent)
-            }
-        }
-        
-        // Standard Mic Button Click
-        voiceBtn.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
-                startListeningWithoutBeep()
-            } else {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), REQUEST_CODE_PERMISSION)
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
             }
         }
     }
 
-<<<<<<< HEAD
     private fun showChatOptionsPopupExactlyAtTouch(x: Float, y: Float, chatId: String, chatData: Map<String, Any?>) {
         val isPinned = (chatData["isPinned"] as? Boolean) ?: false
         val rootView = window.decorView.findViewById<ViewGroup>(android.R.id.content)
@@ -1641,27 +1300,13 @@ class MainActivity : Activity() {
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-=======
-<<<<<<< HEAD
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
                 val account = task.getResult(ApiException::class.java)
-<<<<<<< HEAD
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) { 
                 chatWebView.evaluateJavascript("javascript:if(typeof showLimitBanner === 'function') { showLimitBanner('Authentication failed. Please verify your connection and try again.'); setTimeout(hideLimitBanner, 4000); }", null)
-=======
-                if (account.idToken != null) {
-                    firebaseAuthWithGoogle(account.idToken!!)
-                }
-            } catch (e: ApiException) {
-                Toast.makeText(this, "Sign-in failed: ${e.statusCode}", Toast.LENGTH_LONG).show()
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
             }
         }
     }
@@ -1671,24 +1316,14 @@ class MainActivity : Activity() {
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-<<<<<<< HEAD
                     loginLayout.visibility = View.GONE
                     updateLoginUI()
                 } else { 
                     chatWebView.evaluateJavascript("javascript:if(typeof showLimitBanner === 'function') { showLimitBanner('Sign-in failed. Please try again.'); setTimeout(hideLimitBanner, 4000); }", null)
-=======
-                    val user = firebaseAuth.currentUser
-                    Toast.makeText(this, "Welcome ${user?.displayName ?: ""}", Toast.LENGTH_SHORT).show()
-                    updateMenuLoginText()
-                    goBackToMenuFromLogin()
-                } else {
-                    Toast.makeText(this, "Authentication failed: ${task.exception?.localizedMessage}", Toast.LENGTH_LONG).show()
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
                 }
             }
     }
 
-<<<<<<< HEAD
     override fun onDestroy() {
         super.onDestroy()
         TTSHelper.shutdown()
@@ -1719,243 +1354,3 @@ class MainActivity : Activity() {
         messageInput.clearFocus()
     }
 }
-=======
-    private fun updateMenuLoginText() {
-        val user = firebaseAuth.currentUser
-        menuLogin.text = if (user != null) (user.displayName ?: user.email ?: "Logged in") else "Login"
-    }
-
-    private fun goBackToMenuFromSettings() {
-        settingsLayout.animate().alpha(0f).setDuration(250).withEndAction {
-            settingsLayout.visibility = View.GONE
-        }.start()
-    }
-
-    private fun goBackToMenuFromLogin() {
-        loginLayout.animate().alpha(0f).setDuration(250).withEndAction {
-            loginLayout.visibility = View.GONE
-        }.start()
-    }
-
-    override fun onBackPressed() {
-        if (settingsLayout.visibility == View.VISIBLE) {
-            goBackToMenuFromSettings()
-        } else if (loginLayout.visibility == View.VISIBLE) {
-            goBackToMenuFromLogin()
-        } else if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
-    }
-
-=======
-    // Toggle between Live Wave icon and Send icon dynamically
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-    private fun setupDynamicSendButton() {
-        sendBtn.tag = "live"
-        sendBtn.setImageResource(R.drawable.ic_gemini_live)
-
-        messageInput.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                if (s.isNullOrEmpty()) {
-                    sendBtn.setImageResource(R.drawable.ic_gemini_live)
-                    sendBtn.tag = "live"
-                } else {
-                    sendBtn.setImageResource(R.drawable.ic_send_pro)
-                    sendBtn.tag = "send"
-                }
-            }
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-        })
-    }
-
-    private fun setupSpeechRecognizer() {
-        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
-        speechRecognizer.setRecognitionListener(object : RecognitionListener {
-            override fun onReadyForSpeech(params: Bundle?) {
-                muteBeepSound(false) 
-                messageInput.hint = "Listening..."
-            }
-            override fun onBeginningOfSpeech() {}
-            override fun onRmsChanged(rmsdB: Float) {}
-            override fun onBufferReceived(buffer: ByteArray?) {}
-            override fun onEndOfSpeech() {
-                messageInput.hint = "Ask Siri AI..."
-            }
-            override fun onError(error: Int) {
-                muteBeepSound(false) 
-                messageInput.hint = "Ask Siri AI..."
-            }
-            override fun onResults(results: Bundle?) {
-                muteBeepSound(false)
-                messageInput.hint = "Ask Siri AI..."
-                val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                if (!matches.isNullOrEmpty()) {
-                    val currentText = messageInput.text.toString()
-                    val newText = if (currentText.isEmpty()) matches[0] else "$currentText ${matches[0]}"
-                    messageInput.setText(newText)
-                    messageInput.setSelection(messageInput.text.length)
-                }
-            }
-            override fun onPartialResults(partialResults: Bundle?) {}
-            override fun onEvent(eventType: Int, params: Bundle?) {}
-        })
-    }
-
-    private fun startListeningWithoutBeep() {
-<<<<<<< HEAD
-        try {
-            val speechRecognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-                putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-                putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
-            }
-            muteBeepSound(true)
-            speechRecognizer.startListening(speechRecognizerIntent)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    private fun muteBeepSound(mute: Boolean) {
-        try {
-            val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
-            val adjust = if (mute) AudioManager.ADJUST_MUTE else AudioManager.ADJUST_UNMUTE
-            audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, adjust, 0)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-=======
-        val speechRecognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
-        }
-        muteBeepSound(true)
-        speechRecognizer.startListening(speechRecognizerIntent)
-    }
-
-    private fun muteBeepSound(mute: Boolean) {
-        val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
-        val adjust = if (mute) AudioManager.ADJUST_MUTE else AudioManager.ADJUST_UNMUTE
-        audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, adjust, 0)
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-<<<<<<< HEAD
-        try {
-            speechRecognizer.destroy()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-=======
-        speechRecognizer.destroy()
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-    }
-
-    private fun addMessage(text: String, isUser: Boolean) {
-        val tv = TextView(this)
-        tv.text = text
-        tv.textSize = 16f
-        
-        val params = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.WRAP_CONTENT, 
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        )
-        params.topMargin = 16
-        
-        if (isUser) {
-            tv.setPadding(36, 20, 36, 20)
-            tv.setBackgroundResource(R.drawable.bg_message_user)
-            tv.setTextColor(android.graphics.Color.WHITE)
-            params.gravity = android.view.Gravity.END
-            params.marginStart = 80
-        } else {
-            tv.setPadding(8, 8, 8, 8)
-            tv.setBackgroundColor(android.graphics.Color.TRANSPARENT)
-            tv.setTextColor(android.graphics.Color.parseColor("#E0E0E0")) 
-            params.gravity = android.view.Gravity.START
-            params.marginEnd = 40
-        }
-        
-        tv.layoutParams = params
-        chatContainer.addView(tv)
-        chatScrollView.post { chatScrollView.fullScroll(ScrollView.FOCUS_DOWN) }
-    }
-
-    private fun updateLastMessage(text: String) {
-        val lastChild = chatContainer.getChildAt(chatContainer.childCount - 1)
-        if (lastChild is TextView) { 
-            lastChild.text = text 
-        }
-    }
-
-    private fun callGroqAPI(userMessage: String) {
-        val url = "https://api.groq.com/openai/v1/chat/completions"
-        
-        val messageObj = JSONObject()
-        messageObj.put("role", "user")
-        messageObj.put("content", userMessage)
-        
-        val messagesArray = JSONArray()
-        messagesArray.put(messageObj)
-        
-        val jsonBody = JSONObject()
-<<<<<<< HEAD
-        jsonBody.put("model", "openai/gpt-oss-20b") 
-=======
-        jsonBody.put("model", "llama-3.1-8b-instant") 
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
-        jsonBody.put("messages", messagesArray)
-        
-        val body = jsonBody.toString().toRequestBody("application/json".toMediaType())
-        
-        val request = Request.Builder()
-            .url(url)
-            .addHeader("Authorization", "Bearer $apiKey")
-            .addHeader("Content-Type", "application/json")
-            .post(body)
-            .build()
-        
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                handler.post { 
-                    if (isFinishing || isDestroyed) return@post
-                    updateLastMessage("Network Error: " + e.message) 
-                }
-            }
-            
-            override fun onResponse(call: Call, response: Response) {
-                val raw = response.body?.string()
-                handler.post {
-                    if (isFinishing || isDestroyed) return@post
-                    
-                    try {
-                        val json = JSONObject(raw ?: "")
-                        if (json.has("error")) {
-                            updateLastMessage("API Error: " + json.getJSONObject("error").optString("message"))
-                            return@post
-                        }
-                        
-                        val txt = json.getJSONArray("choices")
-                            .getJSONObject(0)
-                            .getJSONObject("message")
-                            .getString("content")
-                            
-                        updateLastMessage(txt.trim())
-                        chatScrollView.post { chatScrollView.fullScroll(ScrollView.FOCUS_DOWN) }
-                    } catch (ex: Exception) {
-                        updateLastMessage("System Error: Could not process the response.")
-                    }
-                }
-            }
-        })
-    }
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095

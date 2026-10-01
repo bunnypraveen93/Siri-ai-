@@ -2,17 +2,13 @@ package com.praveen.siriai
 
 import android.app.Application
 import android.content.Context
-<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
-=======
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 import java.io.File
 import java.io.PrintWriter
 import java.io.StringWriter
 
 class MyApp : Application() {
-<<<<<<< HEAD
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
 
@@ -43,12 +39,6 @@ class MyApp : Application() {
         } catch (ignored: Exception) {
         }
 
-=======
-
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
         Thread.setDefaultUncaughtExceptionHandler { _, throwable ->
             try {
                 val sw = StringWriter()
@@ -62,7 +52,6 @@ class MyApp : Application() {
             System.exit(1)
         }
     }
-<<<<<<< HEAD
 
     // BLINK FIX: apply saved theme + language HERE, before any Activity exists.
     // If this is done inside MainActivity.onCreate, AppCompat re-creates the
@@ -79,6 +68,3 @@ class MyApp : Application() {
         }
     }
 }
-=======
-}
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095

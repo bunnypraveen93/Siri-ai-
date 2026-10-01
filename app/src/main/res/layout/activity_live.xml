@@ -2,11 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:background="@color/app_bg"> <!-- BUG FIX: ఇక్కడ హార్డ్‌కోడ్ తీసేసాను -->
-=======
-    android:background="#121212">
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 
     <!-- Top Right Close Button -->
     <ImageView
@@ -18,12 +14,7 @@
         android:layout_margin="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="12dp"
-<<<<<<< HEAD
         android:src="@android:drawable/ic_menu_close_clear_cancel" />
-=======
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        android:tint="#FFFFFF" />
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
 
     <!-- Animated Gradient Circle (మధ్యలో ఉంటుంది) -->
     <View
@@ -42,10 +33,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:text="Listening..."
-<<<<<<< HEAD
-=======
-        android:textColor="#A0A0A0"
->>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
         android:textSize="18sp"
         android:textStyle="bold" />
 
