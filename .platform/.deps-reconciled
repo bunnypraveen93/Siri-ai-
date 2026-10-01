@@ -1,0 +1,11 @@
+v=3
+app|androidx.appcompat:appcompat:1.6.1|
+app|androidx.recyclerview:recyclerview:1.3.2|
+app|com.google.android.gms:play-services-auth:21.2.0|
+app|com.google.android.gms:play-services-auth:21.6.0|
+app|com.google.android.material:material:1.11.0|
+app|com.google.android.material:material:1.14.0|
+app|com.google.firebase:firebase-auth:24.2.0|
+app|com.google.firebase:firebase-crashlytics:18.6.4|
+app|com.squareup.okhttp3:okhttp:4.12.0|
+app|kotlin-stdlib|

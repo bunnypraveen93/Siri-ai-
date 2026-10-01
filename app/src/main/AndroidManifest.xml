@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.praveen.siriai">
 
+<<<<<<< HEAD
     <!-- Network & Voice Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -87,6 +88,28 @@
             android:theme="@style/Theme.App.Launch"
             android:exported="true"
             android:launchMode="singleTop"
+=======
+    <!-- Permissions required for AI and Voice -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+<<<<<<< HEAD
+        android:name=".MyApp"
+=======
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Siri AI"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+>>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -94,6 +117,7 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <!-- Live Mode Activity -->
         <activity
             android:name=".LiveActivity"
@@ -120,3 +144,27 @@
         </service>
     </application>
 </manifest>
+=======
+<<<<<<< HEAD
+        <!-- Live Mode Activity (Found in your project structure) -->
+        <activity 
+            android:name=".LiveActivity" 
+            android:exported="false" />
+
+    </application>
+</manifest>
+=======
+        <!-- Live Mode Activity -->
+        <activity 
+            android:name=".LiveActivity" 
+            android:exported="false" />
+            
+        <!-- Login Activity (If you are still using Firebase Auth) -->
+        <activity 
+            android:name=".LoginActivity" 
+            android:exported="false" />
+
+    </application>
+</manifest>
+>>>>>>> a7f89e9edacb3afb2d89115690e88aa810c9527c
+>>>>>>> d30a9d246c25a0058a0180da1e0b4d66eb5ab095

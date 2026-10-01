@@ -1,0 +1,27 @@
+ctx	7fe5bbff7506b7cfc8898c21aa7677de
+s	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/LoginActivity.kt	86fa35bf8ce846bb297d2f486fa88689
+s	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/praveen/siriai/MainActivity.kt	79ed3fc94451bfadd560a1e9de963c9f
+s	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/praveen/siriai/Message.kt	43321bc20abcb228a3814bebe2b31ff9
+s	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/praveen/siriai/ChatAdapter.kt	1f963d106328cc1b97d39e7d6858b4c6
+s	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/praveen/siriai/LiveActivity.kt	5cecd77a68724a195f683bbc45abefbe
+o	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/LoginActivity.kt	com/praveen/siriai/LoginActivity.class
+o	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/praveen/siriai/MainActivity.kt	com/praveen/siriai/MainActivity.class,com/praveen/siriai/MainActivity$setupDynamicSendButton$1.class,com/praveen/siriai/MainActivity$setupSpeechRecognizer$1.class,com/praveen/siriai/MainActivity$callGroqAPI$1.class
+o	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/praveen/siriai/Message.kt	com/praveen/siriai/Message.class
+o	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/praveen/siriai/ChatAdapter.kt	com/praveen/siriai/ChatAdapter.class,com/praveen/siriai/ChatAdapter$Companion.class,com/praveen/siriai/ChatAdapter$UserViewHolder.class,com/praveen/siriai/ChatAdapter$AiViewHolder.class
+o	/storage/emulated/0/Android/data/com.tyron.code/files/codeassist/projects/siri-ai/app/src/main/kotlin/com/praveen/siriai/LiveActivity.kt	com/praveen/siriai/LiveActivity.class,com/praveen/siriai/LiveActivity$startAmplitudeMonitoring$1.class,com/praveen/siriai/LiveActivity$processAudioWithGroqWhisper$1.class,com/praveen/siriai/LiveActivity$getAIResponseFromGroq$1.class,com/praveen/siriai/LiveActivity$convertTextToSpeechElevenLabs$1.class,com/praveen/siriai/LiveActivity$startInterruptionListening$2.class
+a	com/praveen/siriai/ChatAdapter$AiViewHolder.class	4b60e0b0158dd220844683f47d0750d2
+a	com/praveen/siriai/ChatAdapter$Companion.class	17727079378033171e766682ca5a6721
+a	com/praveen/siriai/ChatAdapter$UserViewHolder.class	e6cbedc1e505a622fcc749a95000dcab
+a	com/praveen/siriai/ChatAdapter.class	8b4ab197ca653639fa8b8fb6aff42ff0
+a	com/praveen/siriai/LiveActivity$convertTextToSpeechElevenLabs$1.class	3fcd6e2739f1a4a5d9c37eecd7d08ee1
+a	com/praveen/siriai/LiveActivity$getAIResponseFromGroq$1.class	e42649e0bb7cb7981dd186a671cfb152
+a	com/praveen/siriai/LiveActivity$processAudioWithGroqWhisper$1.class	1891303d70e04b6785a4fc22f1b299c1
+a	com/praveen/siriai/LiveActivity$startAmplitudeMonitoring$1.class	558893b3629732e4a26da031ca54e3b2
+a	com/praveen/siriai/LiveActivity$startInterruptionListening$2.class	a548901479984e6a25c9a14a608b62f5
+a	com/praveen/siriai/LiveActivity.class	9b242b995befd2a351ef5fbfcf33d649
+a	com/praveen/siriai/LoginActivity.class	7e9d819603e165b2f12a352244dcf86e
+a	com/praveen/siriai/MainActivity$callGroqAPI$1.class	365e7d2c9998c39b725b9df2d06545a1
+a	com/praveen/siriai/MainActivity$setupDynamicSendButton$1.class	0364072be1f972d6e287878ae1836b8c
+a	com/praveen/siriai/MainActivity$setupSpeechRecognizer$1.class	8817807912e652cacf52f437698bca82
+a	com/praveen/siriai/MainActivity.class	3eaf22de78433db235581a063aa5a5ee
+a	com/praveen/siriai/Message.class	b0200bb60cfd4bed85276ad4dd280771
